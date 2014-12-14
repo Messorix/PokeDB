@@ -205,7 +205,7 @@ namespace Pokemon
             {
                 DisplayMemberBinding = new Binding("Level"),
                 Header = "Level",
-                Width = 105
+                Width = 50
             };
 
             GridViewColumn movename = new GridViewColumn
@@ -219,7 +219,7 @@ namespace Pokemon
             {
                 DisplayMemberBinding = new Binding("Move.Type.Name"),
                 Header = "Type",
-                Width = 105
+                Width = 60
             };
 
             #region Level up
@@ -228,6 +228,12 @@ namespace Pokemon
             levelup.Columns.Add(level);
             levelup.Columns.Add(movename);
             levelup.Columns.Add(type);
+
+            Style listViewItemStyle = new Style(typeof(ListViewItem));
+
+            listViewItemStyle.Setters.Add(new Setter(ListViewItem.ToolTipProperty, new Binding("Move.ToolTip")));
+
+            lvLevel.ItemContainerStyle = listViewItemStyle;
 
             lvLevel.View = levelup;
             #endregion

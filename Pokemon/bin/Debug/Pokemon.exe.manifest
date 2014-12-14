@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pokemon.exe" size="11364864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pokemon.exe" size="11366872">
       <assemblyIdentity name="Pokemon" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mzadQGFTAvF/dDxdln3cw2gOG1IRulik2YxiCWSZGO8=</dsig:DigestValue>
+        <dsig:DigestValue>1KcFCFVAdYFwZcdnFiyqzeYiDIvDtYhuyjyplepLOWo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

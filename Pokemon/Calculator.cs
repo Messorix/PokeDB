@@ -8,9 +8,9 @@ namespace Pokemon
 {
     public static class Calculator
     {
-	///<summary>
-	///Calculate the highest possible value for a stat except hp
-	///</summary>
+	    ///<summary>
+	    ///Calculate the highest possible value for a stat except hp
+	    ///</summary>
         public static int CalculateMax(int BaseStat, int Level)
         {
             int IV = 31;
@@ -20,9 +20,9 @@ namespace Pokemon
             return CalculateStat(BaseStat, Level, IV, EV, NatureValue);
         }
 
-	///<summary>
-	///Calculate the lowest possible value for a stat except hp
-	///</summary>
+	    ///<summary>
+	    ///Calculate the lowest possible value for a stat except hp
+	    ///</summary>
         public static int CalculateMin(int BaseStat, int Level)
         {
             int IV = 0;
@@ -32,9 +32,9 @@ namespace Pokemon
             return CalculateStat(BaseStat, Level, IV, EV, NatureValue);
         }
 
-	///<summary>
-	///Calculate the highest possible value for hp
-	///</summary>
+	    ///<summary>
+	    ///Calculate the highest possible value for hp
+	    ///</summary>
         public static int CalculateMaxHP(int BaseStat, int Level)
         {
             int IV = 31;
@@ -43,9 +43,9 @@ namespace Pokemon
             return CalculateHP(BaseStat, Level, IV, EV);
         }
 
-	///<summary>
-	///Calculate the lowest possible value for hp
-	///</summary>
+	    ///<summary>
+	    ///Calculate the lowest possible value for hp
+	    ///</summary>
         public static int CalculateMinHP(int BaseStat, int Level)
         {
             int IV = 0;
@@ -54,14 +54,14 @@ namespace Pokemon
             return CalculateHP(BaseStat, Level, IV, EV);
         }
 
-	///<summary>
-	///Create all possible values for a stat except hp
-	///</summary>
+	    ///<summary>
+	    ///Create all possible values for a stat except hp
+	    ///</summary>
         public static List<int> CalculateIV(int BaseStat, int Level, int Total, double Nature, int EV)
         {
             List<int> returnable = new List<int>();
 
-	    //Note: Deze formule staat bij de daadwerkelijk calculation-methods in stukken, vanwege de manier hoe C# prioritizeerd in het berekenen
+	        //Note: Deze formule staat bij de daadwerkelijk calculation-methods in stukken, vanwege de manier hoe C# prioritizeerd in het berekenen
             //var var1 = Math.Floor(((Math.Ceiling(Total / Nature) - 5) * 100 / Level) - 2 * BaseStat - EV / 4);
             //int test = Convert.ToInt32(var1);
 
@@ -74,9 +74,9 @@ namespace Pokemon
             return returnable;
         }
 
-	///<summary>
-	///Create all possible values for hp
-	///</summary>
+	    ///<summary>
+	    ///Create all possible values for hp
+	    ///</summary>
         public static List<int> CalculateIVHP(int BaseStat, int Level, int Total, int EV)
         {
             List<int> returnable = new List<int>();
@@ -90,9 +90,9 @@ namespace Pokemon
             return returnable;
         }
 
-	///<summary>
-	///Calculate the value for stat under set condition
-	///</summary>
+	    ///<summary>
+	    ///Calculate the value for stat under set condition
+	    ///</summary>
         public static int CalculateStat(int BaseStat, int Level, int IV, int EV, double NatureValue)
         {
             var var1 = IV + (2 * BaseStat);

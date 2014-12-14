@@ -16,6 +16,7 @@ namespace Pokemon
         public int PP { get; private set; }
         public string Power { get; private set; }
         public string Accuracy { get; private set; }
+        public string ToolTip { get; private set; }
 
         public Move (int i, string n, PokeType t, Category c, int pp, string p, string a)
         {
@@ -26,6 +27,18 @@ namespace Pokemon
             PP = pp;
             Power = p;
             Accuracy = a;
+
+            if (p.Length > 0)
+                ToolTip = "Power:\t\t" + p;
+            else
+                ToolTip = "Power:\t\t---";
+            
+            if (a.Length > 0)
+                ToolTip += "\nAccuracy:\t" + a + "%";
+            else
+                ToolTip += "\nAccuracy:\t---";
+
+            ToolTip += "\nPP:\t\t" + pp;
         }
 
         public Move(SerializationInfo info, StreamingContext ctxt)

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemon", "Pokemon\Pokemon.csproj", "{64CBB0AE-52E5-4B73-B1A2-BAA8D843325B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1BC1DD74-10D0-40C6-9860-DC43A64535F2}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Messorix\AppData\Local\Temp\Rar$DRa0.804\Pokemon\Database.cs = C:\Users\Messorix\AppData\Local\Temp\Rar$DRa0.804\Pokemon\Database.cs
+		Performance1.psess = Performance1.psess
+		Performance2.psess = Performance2.psess
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64CBB0AE-52E5-4B73-B1A2-BAA8D843325B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CBB0AE-52E5-4B73-B1A2-BAA8D843325B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CBB0AE-52E5-4B73-B1A2-BAA8D843325B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CBB0AE-52E5-4B73-B1A2-BAA8D843325B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

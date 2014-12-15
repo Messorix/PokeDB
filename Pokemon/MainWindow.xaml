@@ -1,0 +1,106 @@
+﻿<Window x:Class="Pokemon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Height="902" Width="1265"
+        WindowStyle="None"
+        AllowsTransparency="True" 
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Name="Grid">
+        <Image x:Name="imgPokemon" HorizontalAlignment="Left" Height="150" Margin="234,185,0,0" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="btForme1" Content="Button" HorizontalAlignment="Left" Margin="234,345,0,0" VerticalAlignment="Top" Width="150" Click="btForme_Click"/>
+        <Button x:Name="btForme2" Content="Button" HorizontalAlignment="Left" Margin="234,373,0,0" VerticalAlignment="Top" Width="150" Click="btForme_Click"/>
+        <Button x:Name="btForme3" Content="Button" HorizontalAlignment="Left" Margin="234,401,0,0" VerticalAlignment="Top" Width="150" Click="btForme_Click"/>
+        <Button x:Name="btForme4" Content="Button" HorizontalAlignment="Left" Margin="234,429,0,0" VerticalAlignment="Top" Width="150" Click="btForme_Click"/>
+        <Button x:Name="btForme5" Content="Button" HorizontalAlignment="Left" Margin="234,457,0,0" VerticalAlignment="Top" Width="150" Click="btForme_Click"/>
+        <Button x:Name="btForme6" Content="Button" HorizontalAlignment="Left" Margin="234,485,0,0" VerticalAlignment="Top" Width="150" Click="btForme_Click"/>
+        <Rectangle x:Name="rtBHP" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="416,542,0,0" Stroke="Black" VerticalAlignment="Top" Width="250"/>
+        <TextBlock x:Name="lbBHP" Text="" HorizontalAlignment="Left" Margin="355,542,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="56" FontWeight="Bold" FontSize="14"/>
+        <Rectangle x:Name="rtBAtt" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="416,573,0,0" Stroke="Black" VerticalAlignment="Top" Width="250"/>
+        <TextBlock x:Name="lbBAtt" Text="" HorizontalAlignment="Left" Margin="355,573,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="56" FontWeight="Bold" FontSize="14"/>
+        <Rectangle x:Name="rtBDef" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="416,604,0,0" Stroke="Black" VerticalAlignment="Top" Width="250"/>
+        <TextBlock x:Name="lbBDef" Text="" HorizontalAlignment="Left" Margin="355,604,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="56" FontWeight="Bold" FontSize="14"/>
+        <Rectangle x:Name="rtBSpAtt" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="416,635,0,0" Stroke="Black" VerticalAlignment="Top" Width="250"/>
+        <TextBlock x:Name="lbBSpAtt" Text="" HorizontalAlignment="Left" Margin="355,635,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="56" FontWeight="Bold" FontSize="14"/>
+        <Rectangle x:Name="rtBSpDef" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="416,666,0,0" Stroke="Black" VerticalAlignment="Top" Width="250"/>
+        <TextBlock x:Name="lbBSpDef" Text="" HorizontalAlignment="Left" Margin="355,666,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="56" FontWeight="Bold" FontSize="14"/>
+        <Rectangle x:Name="rtBSpeed" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="26" Margin="416,697,0,0" Stroke="Black" VerticalAlignment="Top" Width="250"/>
+        <TextBlock x:Name="lbBSpeed" Text="" HorizontalAlignment="Left" Margin="355,697,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="56" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBHP_Copy" Text="Base Health" HorizontalAlignment="Left" Margin="234,542,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="113"/>
+        <TextBlock x:Name="lbBAtt_Copy" Text="Base Attack" HorizontalAlignment="Left" Margin="234,573,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="113"/>
+        <TextBlock x:Name="lbBDef_Copy" Text="Base Defense" HorizontalAlignment="Left" Margin="234,604,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="113"/>
+        <TextBlock x:Name="lbBSpAtt_Copy" Text="Base Special Attack" HorizontalAlignment="Left" Margin="234,635,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="113"/>
+        <TextBlock x:Name="lbBSpDef_Copy" Text="Base Special Defense" HorizontalAlignment="Left" Margin="234,666,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="113"/>
+        <TextBlock x:Name="lbBSpeed_Copy" Text="Base Speed" HorizontalAlignment="Left" Margin="234,697,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="113"/>
+        <ListView x:Name="lvPokedex" HorizontalAlignment="Left" Height="324" Margin="575,179,0,0" VerticalAlignment="Top" Width="572" SelectionChanged="lvPokedex_SelectionChanged" IsSynchronizedWithCurrentItem="True">
+        </ListView>
+        <GroupBox x:Name="gbEggGroups" Header="Egg Groups" HorizontalAlignment="Left" Margin="399,402,0,0" VerticalAlignment="Top" Height="100" Width="160">
+            <StackPanel Margin="10">
+                <TextBlock x:Name="lbEggGroup1" Text="" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="110" Foreground="Black" TextAlignment="Center"/>
+                <TextBlock x:Name="lbEggGroup2" Text="" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="110" Foreground="Black" TextAlignment="Center"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="gbTypes" Header="Types" HorizontalAlignment="Left" Margin="399,292,0,0" VerticalAlignment="Top" Height="100" Width="160">
+            <StackPanel Margin="10">
+                <TextBlock x:Name="lbType1" Text="" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="110" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock x:Name="lbType2" Text="" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="110" TextAlignment="Center" Foreground="Black"/>
+            </StackPanel>
+        </GroupBox>
+        <TextBlock x:Name="lbBHPMax" Text="" HorizontalAlignment="Left" Margin="720,542,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBAttMax" Text="" HorizontalAlignment="Left" Margin="720,573,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBDefMax" Text="" HorizontalAlignment="Left" Margin="720,604,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBSpAttMax" Text="" HorizontalAlignment="Left" Margin="720,635,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBSpDefMax" Text="" HorizontalAlignment="Left" Margin="720,666,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBSpeedMax" Text="" HorizontalAlignment="Left" Margin="720,697,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBHPMin" Text="" HorizontalAlignment="Left" Margin="678,542,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBAttMin" Text="" HorizontalAlignment="Left" Margin="678,573,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBDefMin" Text="" HorizontalAlignment="Left" Margin="678,604,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBSpAttMin" Text="" HorizontalAlignment="Left" Margin="678,635,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBSpDefMin" Text="" HorizontalAlignment="Left" Margin="678,666,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbBSpeedMin" Text="" HorizontalAlignment="Left" Margin="678,697,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="lbLevel" Text="Level 1" HorizontalAlignment="Left" Margin="234,730,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.346,0.123" Height="21" Width="56"/>
+        <Slider x:Name="slLevel" HorizontalAlignment="Left" Margin="416,730,0,0" VerticalAlignment="Top" Maximum="100" Minimum="1" Height="21" Width="250" ValueChanged="slLevel_ValueChanged" SmallChange="1" Value="1" IsSnapToTickEnabled="True"/>
+        <TextBlock x:Name="lbBHPMin_Copy" Text="Min" HorizontalAlignment="Left" Margin="678,516,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontSize="14"/>
+        <TextBlock x:Name="lbBHPMAx_Copy" Text="Max" HorizontalAlignment="Left" Margin="720,516,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.269" Width="37" FontSize="14"/>
+
+        <Image x:Name="imgDonate" Margin="981,51,104,803" MouseUp="tbDonate_MouseUp">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="button.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <Label x:Name="tbDonate" Content="Donate" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Height="48" VerticalAlignment="Top" Width="166" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="981,51,118,0" MouseUp="tbDonate_MouseUp"/>
+
+        <TextBox x:Name="tbNameSearch" HorizontalAlignment="Left" Height="23" Margin="575,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="572" TextChanged="txtFilter_TextChanged" Text="Search name:" GotFocus="tbNameSearch_GotFocus" LostFocus="tbNameSearch_LostFocus"/>
+        <Image x:Name="imgExit" HorizontalAlignment="Left" Height="20" Margin="1232,10,0,0" VerticalAlignment="Top" Width="20" Source="exit.png" MouseUp="imgExit_MouseUp"/>
+        <GroupBox x:Name="gbTypes_Copy" Header="Evolutions" HorizontalAlignment="Left" Margin="399,179,0,0" VerticalAlignment="Top" Height="100" Width="160">
+            <Grid>
+                <TextBlock x:Name="lbPreEvo" Text="Label" HorizontalAlignment="Left" Margin="40,3,0,0" VerticalAlignment="Top" Width="100" Height="25" FontSize="17" TextAlignment="Left" TextDecorations="{x:Null}" MouseLeave="lbEvo_MouseLeave" MouseEnter="lbEvo_MouseEnter" MouseLeftButtonUp="lbPreEvo_MouseLeftButtonUp" FontWeight="Bold" Foreground="Black"/>
+                <TextBlock x:Name="lbEvo" Text="Label" HorizontalAlignment="Left" Margin="40,34,-42,0" VerticalAlignment="Top" Width="150" Height="25" FontSize="17" TextAlignment="Left" MouseEnter="lbEvo_MouseEnter" MouseLeave="lbEvo_MouseLeave" TextDecorations="{x:Null}" MouseLeftButtonUp="lbPreEvo_MouseLeftButtonUp" FontWeight="Bold" Foreground="Black"/>
+                <ComboBox x:Name="cbEvo" HorizontalAlignment="Left" Margin="0,33,0,0" VerticalAlignment="Top" Width="100" Height="25" FontSize="14" Visibility="Collapsed" DropDownClosed="cbEvo_SelectionChanged"/>
+                <Image x:Name="imgPreEvo" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="40" Height="32"/>
+                <Image x:Name="imgEvo" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" Width="40" Height="32"/>
+            </Grid>
+        </GroupBox>
+        <TabControl x:Name="tbMoveset" HorizontalAlignment="Left" Height="231" Margin="762,520,0,0" VerticalAlignment="Top" Width="385">
+            <TabItem x:Name="tbiLevel" Header="Level Up">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="lvLevel" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="375"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiEgg" Header="Egg Move">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="lvEgg" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="375"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiTutor" Header="Move Tutor">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="lvTutor" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="375"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiMachine" Header="TM/HM">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="lvMachine" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="375"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -187,6 +187,7 @@ namespace Pokemon
             {
                 Serializer serializer = new Serializer();
                 Pokedex = serializer.DeSerializePokedex("pokedex.bin");
+                Database.EvoTrees = XMLReader.ReadEvoTrees();
                 Database.Pokedex = Pokedex;
             }
             else
@@ -200,6 +201,10 @@ namespace Pokemon
 
             GetTheme();
 
+
+            Style listViewItemStyle = new Style(typeof(ListViewItem));
+
+            listViewItemStyle.Setters.Add(new Setter(ListViewItem.ToolTipProperty, new Binding("Move.ToolTip")));
 
             GridViewColumn level = new GridViewColumn
             {
@@ -228,13 +233,8 @@ namespace Pokemon
             levelup.Columns.Add(level);
             levelup.Columns.Add(movename);
             levelup.Columns.Add(type);
-
-            Style listViewItemStyle = new Style(typeof(ListViewItem));
-
-            listViewItemStyle.Setters.Add(new Setter(ListViewItem.ToolTipProperty, new Binding("Move.ToolTip")));
-
+            
             lvLevel.ItemContainerStyle = listViewItemStyle;
-
             lvLevel.View = levelup;
             #endregion
             #region Egg Move
@@ -242,7 +242,7 @@ namespace Pokemon
             {
                 DisplayMemberBinding = new Binding("Move.Name"),
                 Header = "Move",
-                Width = 105
+                Width = 50
             };
 
             type = new GridViewColumn
@@ -256,6 +256,8 @@ namespace Pokemon
 
             eggmove.Columns.Add(movename);
             eggmove.Columns.Add(type);
+
+            lvEgg.ItemContainerStyle = listViewItemStyle;
             lvEgg.View = eggmove;
             #endregion
             #region Move Tutor
@@ -263,7 +265,7 @@ namespace Pokemon
             {
                 DisplayMemberBinding = new Binding("Move.Name"),
                 Header = "Move",
-                Width = 105
+                Width = 50
             };
 
             type = new GridViewColumn
@@ -277,6 +279,8 @@ namespace Pokemon
 
             tutor.Columns.Add(movename);
             tutor.Columns.Add(type);
+
+            lvTutor.ItemContainerStyle = listViewItemStyle;
             lvTutor.View = tutor;
             #endregion
             #region Machine
@@ -284,7 +288,7 @@ namespace Pokemon
             {
                 DisplayMemberBinding = new Binding("Move.Name"),
                 Header = "Move",
-                Width = 105
+                Width = 50
             };
 
             type = new GridViewColumn
@@ -298,6 +302,8 @@ namespace Pokemon
 
             machine.Columns.Add(movename);
             machine.Columns.Add(type);
+
+            lvMachine.ItemContainerStyle = listViewItemStyle;
             lvMachine.View = machine;
             #endregion
 

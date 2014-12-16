@@ -266,6 +266,8 @@ namespace Pokemon
 
         public static List<EvolutionTree> ReadEvoTrees()
         {
+            List<int> test = new List<int>();
+
             List<EvolutionTree> returnable = new List<EvolutionTree>();
             _doc.Load(URL + "evotrees.xml");
             XmlElement root = _doc.DocumentElement;
@@ -282,14 +284,14 @@ namespace Pokemon
                 string condition = current.GetElementsByTagName("Condition")[0].InnerText;
                 int level = Convert.ToInt32(current.GetElementsByTagName("Level")[0].InnerText);
 
-                EvolutionTree et = new EvolutionTree(treenumber);
+                EvolutionTree et = new EvolutionTree(id, treenumber);
                 EvolutionInstance ei = null;
 
                 if (returnable.Count > 0)
                 {
                     foreach (EvolutionTree temp in returnable)
                     {
-                        if (et.ID == temp.ID)
+                        if (et.TreeID == temp.TreeID)
                         {
                             et = temp;
                             break;
@@ -306,7 +308,8 @@ namespace Pokemon
                     case "Level With Unique Condition":
                     case "Trade":
                     case "Trade for Specific Pokemon":
-                        ei = new EvolutionInstance(et.ID,
+                        ei = new EvolutionInstance(id,
+                                                    et.TreeID,
                                                     placeintree,
                                                     evomethod,
                                                     level,
@@ -315,7 +318,8 @@ namespace Pokemon
                     case "Level With Item":
                     case "Trade With Item":
                     case "Use Stone":
-                        ei = new EvolutionInstance(et.ID,
+                        ei = new EvolutionInstance(id,
+                                                    et.TreeID,
                                                     placeintree,
                                                     evomethod,
                                                     level,
@@ -323,7 +327,8 @@ namespace Pokemon
                                                     Database.GetItem(Convert.ToInt32(current.GetElementsByTagName("Item")[0].InnerText)));
                         break;
                     case "Level With Move":
-                        ei = new EvolutionInstance(et.ID,
+                        ei = new EvolutionInstance(id,
+                                                    et.TreeID,
                                                     placeintree,
                                                     evomethod,
                                                     level,
@@ -331,7 +336,8 @@ namespace Pokemon
                                                     Database.GetMove(Convert.ToInt32(current.GetElementsByTagName("Move")[0].InnerText)));
                         break;
                     case "Egg":
-                        ei = new EvolutionInstance(et.ID,
+                        ei = new EvolutionInstance(id,
+                                                    et.TreeID,
                                                     placeintree,
                                                     evomethod);
                         break;
@@ -345,7 +351,6 @@ namespace Pokemon
                     if (p.EvoInstanceID == id)
                     {
                         p.AddEvolutionInstance(ei);
-                        break;
                     }
                 }
             }

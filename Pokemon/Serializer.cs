@@ -29,6 +29,14 @@ namespace Pokemon
             stream.Close();
         }
 
+        public void SerializeEvoTrees(string filename, List<EvolutionTree> objectToSerialize)
+        {
+            Stream stream = File.Open(filename, FileMode.Create);
+            BinaryFormatter bFormatter = new BinaryFormatter();
+            bFormatter.Serialize(stream, objectToSerialize);
+            stream.Close();
+        }
+
         public List<Account> DeSerializeAccounts(string filename)
         {
             List<Account> objectToSerialize;
@@ -48,26 +56,15 @@ namespace Pokemon
             stream.Close();
             return objectToSerialize;
         }
-    }
 
-    [Serializable]
-    public class ObjectToSerialize : ISerializable
-    {
-        private ObservableCollection<Account> accounts;
-
-        public ObservableCollection<Account> Accounts
+        public List<EvolutionTree> DeSerializeEvoTrees(string filename)
         {
-            get { return this.accounts; }
-            set { this.accounts = value; }
-        }
-
-        public ObjectToSerialize()
-        {
-        }
-
-        public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
-        {
-            info.AddValue("Accounts", Accounts);
+            List<EvolutionTree> objectToSerialize;
+            Stream stream = File.Open(filename, FileMode.Open);
+            BinaryFormatter bFormatter = new BinaryFormatter();
+            objectToSerialize = (List<EvolutionTree>)bFormatter.Deserialize(stream);
+            stream.Close();
+            return objectToSerialize;
         }
     }
 }

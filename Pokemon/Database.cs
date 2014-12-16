@@ -41,7 +41,7 @@ namespace Pokemon
         private List<Pokémon> _dex = new List<Pokémon>();
         private static List<PokeType> Types;
         private static List<EggGroup> EggGroups;
-        private static List<EvolutionTree> EvoTrees;
+        public static List<EvolutionTree> EvoTrees;
         private static List<EvoMethod> EvoMethods;
         private static List<Pocket> Pockets;
         private static List<Item> Items;
@@ -257,10 +257,15 @@ namespace Pokemon
             #endregion
 
 
-            List<Pokémon> objectToSerialize = Pokedex;
+            List<Pokémon> pokedexToSerialize = Pokedex;
 
             Serializer serializer = new Serializer();
-            serializer.SerializePokedex("pokedex.bin", objectToSerialize);
+            serializer.SerializePokedex("pokedex.bin", pokedexToSerialize);
+
+            List<EvolutionTree> evotreesToSerialize = EvoTrees;
+
+            serializer = new Serializer();
+            serializer.SerializeEvoTrees("evotrees.bin", evotreesToSerialize);
         }
 
         public static Pocket GetPocket(int p)
@@ -362,7 +367,7 @@ namespace Pokemon
 
             foreach (EvolutionTree etx in EvoTrees)
             {
-                if (etx.ID == ei.TreeID)
+                if (etx.TreeID == ei.TreeID)
                 {
                     et = etx;
 
@@ -395,8 +400,11 @@ namespace Pokemon
                 case 3:
                     foreach (Pokémon p in Pokedex)
                     {
-                        if (p.EvolutionInstance == evoEi)
+                        if ((p.EvolutionInstance.TreeID == evoEi.TreeID) && (p.EvolutionInstance.Place == evoEi.Place))
+                        {
                             x = p.Name;
+                            break;
+                        }
                     }
                     break;
             }
@@ -411,7 +419,7 @@ namespace Pokemon
 
             foreach (EvolutionTree etx in EvoTrees)
             {
-                if (etx.ID == ei.TreeID)
+                if (etx.TreeID == ei.TreeID)
                 {
                     et = etx;
 
@@ -446,7 +454,7 @@ namespace Pokemon
                         case 2:
                             foreach (Pokémon p in Pokedex)
                             {
-                                if (p.EvolutionInstance == eix)
+                                if (p.EvoInstanceID == eix.ID)
                                 {
                                     /*ComboBoxItem cbi = new ComboBoxItem();
                                     Image cbii = new Image*/
@@ -472,10 +480,11 @@ namespace Pokemon
                         case 2:
                             foreach (Pokémon p in Pokedex)
                             {
-                                if (p.EvolutionInstance == evoEi[0])
+                                if ((p.EvolutionInstance.TreeID == evoEi[0].TreeID) && (p.EvolutionInstance.Place == evoEi[0].Place))
                                 {
                                     x = p.Name;
                                     imgevo.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/minisprites/" + Convert.ToInt32(p.NationalNumber) + ".png"));
+                                    break;
                                 }
                             }
                             break;

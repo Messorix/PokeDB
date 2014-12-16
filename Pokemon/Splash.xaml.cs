@@ -154,7 +154,7 @@ namespace Pokemon
 
             List<Pokémon> _pokedex = new List<Pokémon>();
 
-            if (_db.IsUpdated(pokedex))
+            /*if (_db.IsUpdated(pokedex))
             {
                 _pokedex.AddRange(pokedex);
                 Database.Pokedex = _pokedex;
@@ -163,7 +163,7 @@ namespace Pokemon
             {
                 Database.LoadPokedex();
                 _pokedex = Database.Pokedex;
-            }
+            }*/
 
             this.Dispatcher.BeginInvoke(new UpdaterDelegate(() =>
             {
@@ -660,17 +660,16 @@ namespace Pokemon
                     Text = a.Friendcode
                 };
 
-                TextBlock safaritype = new TextBlock()
+                Image safaritype = new Image()
                 {
                     HorizontalAlignment = HorizontalAlignment.Left,
                     VerticalAlignment = VerticalAlignment.Top,
-                    TextAlignment = TextAlignment.Left,
-                    Height = 20,
+                    Height = 22,
                     Margin = new Thickness(50 + logo.Width, (220 + (i * (grid.Height + 20))), 0, 0),
                     Opacity = 0.8,
-                    Text = a.SafariType.Name,
-                    Background = (Brush)(new BrushConverter().ConvertFrom(a.SafariType.HEX))
                 };
+
+                safaritype.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "/Types/" + a.SafariType.Name + ".png"));
 
                 Image poke1img = new Image()
                 {

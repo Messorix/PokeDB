@@ -187,7 +187,7 @@ namespace Pokemon
             {
                 Serializer serializer = new Serializer();
                 Pokedex = serializer.DeSerializePokedex("pokedex.bin");
-                Database.EvoTrees = XMLReader.ReadEvoTrees();
+                Database.EvoTrees = serializer.DeSerializeEvoTrees("evotrees.bin");
                 Database.Pokedex = Pokedex;
             }
             else
@@ -742,10 +742,16 @@ namespace Pokemon
                 lbEvo.Margin = new Thickness(40, lbEvo.Margin.Top, lbEvo.Margin.Right, lbEvo.Margin.Bottom);
             }
 
-            lbType1.Text = selectedPokemon.MainType.Name;
-            lbType1.Background = (Brush)bc.ConvertFrom(selectedPokemon.MainType.HEX);
-            lbType2.Text = selectedPokemon.SecondType.Name;
-            lbType2.Background = (Brush)bc.ConvertFrom(selectedPokemon.SecondType.HEX);
+            imgType1.Source =
+                    new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "Types\\" + selectedPokemon.MainType.Name + ".png"));
+            if (selectedPokemon.SecondType.Name != "")
+                imgType2.Source =
+                        new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "Types\\" + selectedPokemon.SecondType.Name + ".png"));
+            else 
+            {
+                imgType2.Source = null;
+            }
+
             lbEggGroup1.Text = selectedPokemon.MainEggGroup.Name;
             lbEggGroup2.Text = selectedPokemon.SecondEggGroup.Name;
 

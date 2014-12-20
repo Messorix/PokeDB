@@ -1,0 +1,11 @@
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\MainWindow.baml
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\Splash.baml
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\App.baml
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\MainWindow.g.cs
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\Splash.g.cs
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\App.g.cs
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\Pokemon_Content.g.cs
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\Pokemon_MarkupCompile.cache
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\Pokemon.g.resources
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\Pokemon.Properties.Resources.resources
+E:\Repo's\PokeDB\Pokemon\obj\x86\Debug\Pokemon.csproj.GenerateResource.Cache
